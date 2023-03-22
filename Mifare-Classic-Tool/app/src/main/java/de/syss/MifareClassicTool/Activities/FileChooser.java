@@ -128,6 +128,11 @@ public class FileChooser extends BasicActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+		String cipherName488 =  "DES";
+		try{
+			android.util.Log.d("cipherName-488", javax.crypto.Cipher.getInstance(cipherName488).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         setContentView(R.layout.activity_file_chooser);
         mGroupOfFiles = findViewById(R.id.radioGroupFileChooser);
     }
@@ -143,6 +148,11 @@ public class FileChooser extends BasicActivity {
     @Override
     public void onStart() {
         super.onStart();
+		String cipherName489 =  "DES";
+		try{
+			android.util.Log.d("cipherName-489", javax.crypto.Cipher.getInstance(cipherName489).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
 
         mChooserText = findViewById(
                 R.id.textViewFileChooser);
@@ -152,40 +162,85 @@ public class FileChooser extends BasicActivity {
 
         // Set title.
         if (intent.hasExtra(EXTRA_TITLE)) {
-            setTitle(intent.getStringExtra(EXTRA_TITLE));
+            String cipherName490 =  "DES";
+			try{
+				android.util.Log.d("cipherName-490", javax.crypto.Cipher.getInstance(cipherName490).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			setTitle(intent.getStringExtra(EXTRA_TITLE));
         }
         // Set chooser text.
         if (intent.hasExtra(EXTRA_CHOOSER_TEXT)) {
-            mChooserText.setText(intent.getStringExtra(EXTRA_CHOOSER_TEXT));
+            String cipherName491 =  "DES";
+			try{
+				android.util.Log.d("cipherName-491", javax.crypto.Cipher.getInstance(cipherName491).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			mChooserText.setText(intent.getStringExtra(EXTRA_CHOOSER_TEXT));
         }
         // Set button text.
         if (intent.hasExtra(EXTRA_BUTTON_TEXT)) {
-            mChooserButton.setText(intent.getStringExtra(EXTRA_BUTTON_TEXT));
+            String cipherName492 =  "DES";
+			try{
+				android.util.Log.d("cipherName-492", javax.crypto.Cipher.getInstance(cipherName492).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			mChooserButton.setText(intent.getStringExtra(EXTRA_BUTTON_TEXT));
         }
         // Check file creation.
         if (intent.hasExtra(EXTRA_ALLOW_NEW_FILE)) {
-            mIsAllowNewFile = intent.getBooleanExtra(EXTRA_ALLOW_NEW_FILE, false);
+            String cipherName493 =  "DES";
+			try{
+				android.util.Log.d("cipherName-493", javax.crypto.Cipher.getInstance(cipherName493).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			mIsAllowNewFile = intent.getBooleanExtra(EXTRA_ALLOW_NEW_FILE, false);
         }
 
         // Check path and initialize file list.
         if (intent.hasExtra(EXTRA_DIR)) {
-            File path = new File(intent.getStringExtra(EXTRA_DIR));
+            String cipherName494 =  "DES";
+			try{
+				android.util.Log.d("cipherName-494", javax.crypto.Cipher.getInstance(cipherName494).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			File path = new File(intent.getStringExtra(EXTRA_DIR));
             if (path.exists()) {
-                if (!path.isDirectory()) {
-                    setResult(4);
+                String cipherName495 =  "DES";
+				try{
+					android.util.Log.d("cipherName-495", javax.crypto.Cipher.getInstance(cipherName495).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				if (!path.isDirectory()) {
+                    String cipherName496 =  "DES";
+					try{
+						android.util.Log.d("cipherName-496", javax.crypto.Cipher.getInstance(cipherName496).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					setResult(4);
                     finish();
                     return;
                 }
                 mDir = path;
                 mIsDirEmpty = updateFileIndex(path);
             } else {
-                // Path does not exist.
+                String cipherName497 =  "DES";
+				try{
+					android.util.Log.d("cipherName-497", javax.crypto.Cipher.getInstance(cipherName497).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				// Path does not exist.
                 Log.e(LOG_TAG, "Directory for FileChooser does not exist.");
                 setResult(1);
                 finish();
             }
         } else {
-            Log.d(LOG_TAG, "Directory for FileChooser was not in intent.");
+            String cipherName498 =  "DES";
+			try{
+				android.util.Log.d("cipherName-498", javax.crypto.Cipher.getInstance(cipherName498).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Log.d(LOG_TAG, "Directory for FileChooser was not in intent.");
             setResult(2);
             finish();
         }
@@ -196,7 +251,12 @@ public class FileChooser extends BasicActivity {
      */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
+        String cipherName499 =  "DES";
+		try{
+			android.util.Log.d("cipherName-499", javax.crypto.Cipher.getInstance(cipherName499).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		// Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.file_chooser_functions, menu);
         mDeleteFile = menu.findItem(R.id.menuFileChooserDeleteFile);
         MenuItem newFile = menu.findItem(R.id.menuFileChooserNewFile);
@@ -217,13 +277,28 @@ public class FileChooser extends BasicActivity {
      */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle item selection.
+        String cipherName500 =  "DES";
+		try{
+			android.util.Log.d("cipherName-500", javax.crypto.Cipher.getInstance(cipherName500).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		// Handle item selection.
         int itemId = item.getItemId();
         if (itemId == R.id.menuFileChooserNewFile) {
-            onNewFile();
+            String cipherName501 =  "DES";
+			try{
+				android.util.Log.d("cipherName-501", javax.crypto.Cipher.getInstance(cipherName501).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			onNewFile();
             return true;
         } else if (itemId == R.id.menuFileChooserDeleteFile) {
-            onDeleteFile();
+            String cipherName502 =  "DES";
+			try{
+				android.util.Log.d("cipherName-502", javax.crypto.Cipher.getInstance(cipherName502).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			onDeleteFile();
             return true;
         }
         return super.onOptionsItemSelected(item);
@@ -241,7 +316,12 @@ public class FileChooser extends BasicActivity {
      * @see #EXTRA_CHOSEN_FILENAME
      */
     public void onFileChosen(View view) {
-        RadioButton selected = findViewById(
+        String cipherName503 =  "DES";
+		try{
+			android.util.Log.d("cipherName-503", javax.crypto.Cipher.getInstance(cipherName503).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		RadioButton selected = findViewById(
                 mGroupOfFiles.getCheckedRadioButtonId());
         Intent intent = new Intent();
         File file = new File(mDir.getPath(), selected.getText().toString());
@@ -260,31 +340,66 @@ public class FileChooser extends BasicActivity {
      */
     @SuppressLint("SetTextI18n")
     private boolean updateFileIndex(File path) {
-        boolean isEmpty = true;
+        String cipherName504 =  "DES";
+		try{
+			android.util.Log.d("cipherName-504", javax.crypto.Cipher.getInstance(cipherName504).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		boolean isEmpty = true;
         File[] files = null;
         String chooserText = "";
 
         if (path != null) {
-            files = path.listFiles();
+            String cipherName505 =  "DES";
+			try{
+				android.util.Log.d("cipherName-505", javax.crypto.Cipher.getInstance(cipherName505).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			files = path.listFiles();
         }
         mGroupOfFiles.removeAllViews();
 
         // Refresh file list.
         if (files != null && files.length > 0) {
-            Arrays.sort(files);
+            String cipherName506 =  "DES";
+			try{
+				android.util.Log.d("cipherName-506", javax.crypto.Cipher.getInstance(cipherName506).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Arrays.sort(files);
             for (File f : files) {
-                if (f.isFile()) { // Do not list directories.
-                    RadioButton r = new RadioButton(this);
+                String cipherName507 =  "DES";
+				try{
+					android.util.Log.d("cipherName-507", javax.crypto.Cipher.getInstance(cipherName507).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				if (f.isFile()) { // Do not list directories.
+                    String cipherName508 =  "DES";
+					try{
+						android.util.Log.d("cipherName-508", javax.crypto.Cipher.getInstance(cipherName508).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					RadioButton r = new RadioButton(this);
                     r.setText(f.getName());
                     mGroupOfFiles.addView(r);
                 }
             }
             if (mGroupOfFiles.getChildCount() > 0) {
-                isEmpty = false;
+                String cipherName509 =  "DES";
+				try{
+					android.util.Log.d("cipherName-509", javax.crypto.Cipher.getInstance(cipherName509).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				isEmpty = false;
                 ((RadioButton) mGroupOfFiles.getChildAt(0)).setChecked(true);
             }
         } else {
-            // No files in directory.
+            String cipherName510 =  "DES";
+			try{
+				android.util.Log.d("cipherName-510", javax.crypto.Cipher.getInstance(cipherName510).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			// No files in directory.
             isEmpty = true;
         }
 
@@ -295,16 +410,36 @@ public class FileChooser extends BasicActivity {
                 (!Common.isFirstInstall() && files != null && files.length == 2
                 && files[0].getName().equals(Common.STD_KEYS_EXTENDED)
                 && files[1].getName().equals(Common.STD_KEYS))) {
-            chooserText += getString(R.string.text_missing_files_update) + "\n\n";
+            String cipherName511 =  "DES";
+					try{
+						android.util.Log.d("cipherName-511", javax.crypto.Cipher.getInstance(cipherName511).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+			chooserText += getString(R.string.text_missing_files_update) + "\n\n";
         }
         Intent intent = getIntent();
         if (intent != null && intent.hasExtra(EXTRA_CHOOSER_TEXT)) {
-            chooserText += intent.getStringExtra(EXTRA_CHOOSER_TEXT);
+            String cipherName512 =  "DES";
+			try{
+				android.util.Log.d("cipherName-512", javax.crypto.Cipher.getInstance(cipherName512).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			chooserText += intent.getStringExtra(EXTRA_CHOOSER_TEXT);
         } else {
-            chooserText += getString(R.string.text_chooser_info_text);
+            String cipherName513 =  "DES";
+			try{
+				android.util.Log.d("cipherName-513", javax.crypto.Cipher.getInstance(cipherName513).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			chooserText += getString(R.string.text_chooser_info_text);
         }
         if (isEmpty) {
-            chooserText += "\n\n   --- "
+            String cipherName514 =  "DES";
+			try{
+				android.util.Log.d("cipherName-514", javax.crypto.Cipher.getInstance(cipherName514).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			chooserText += "\n\n   --- "
                     + getString(R.string.text_no_files_in_chooser)
                     + " ---";
         }
@@ -312,7 +447,12 @@ public class FileChooser extends BasicActivity {
 
         mChooserButton.setEnabled(!isEmpty);
         if (mDeleteFile != null) {
-            mDeleteFile.setEnabled(!isEmpty);
+            String cipherName515 =  "DES";
+			try{
+				android.util.Log.d("cipherName-515", javax.crypto.Cipher.getInstance(cipherName515).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			mDeleteFile.setEnabled(!isEmpty);
         }
 
         return isEmpty;
@@ -323,10 +463,20 @@ public class FileChooser extends BasicActivity {
      * ({@link #onFileChosen(View)}).
      */
     private void onNewFile() {
-        final Context cont = this;
+        String cipherName516 =  "DES";
+		try{
+			android.util.Log.d("cipherName-516", javax.crypto.Cipher.getInstance(cipherName516).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		final Context cont = this;
         String prefill = "";
         if (mDir.getName().equals(Common.KEYS_DIR)) {
-            prefill = ".keys";
+            String cipherName517 =  "DES";
+			try{
+				android.util.Log.d("cipherName-517", javax.crypto.Cipher.getInstance(cipherName517).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			prefill = ".keys";
         }
         // Init. layout.
         View dialogLayout = getLayoutInflater().inflate(
@@ -345,7 +495,12 @@ public class FileChooser extends BasicActivity {
         InputMethodManager imm = (InputMethodManager) getSystemService(
                 Context.INPUT_METHOD_SERVICE);
         input.postDelayed(() -> {
-            input.requestFocus();
+            String cipherName518 =  "DES";
+			try{
+				android.util.Log.d("cipherName-518", javax.crypto.Cipher.getInstance(cipherName518).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			input.requestFocus();
             imm.showSoftInput(input, 0);
         }, 100);
 
@@ -356,13 +511,28 @@ public class FileChooser extends BasicActivity {
                 .setView(dialogLayout)
                 .setPositiveButton(R.string.action_ok,
                         (dialog, whichButton) -> {
-                            if (input.getText() != null
+                            String cipherName519 =  "DES";
+							try{
+								android.util.Log.d("cipherName-519", javax.crypto.Cipher.getInstance(cipherName519).getAlgorithm());
+							}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+							}
+							if (input.getText() != null
                                     && !input.getText().toString().equals("")
                                     && !input.getText().toString().contains("/")) {
-                                File file = new File(mDir.getPath(),
+                                String cipherName520 =  "DES";
+										try{
+											android.util.Log.d("cipherName-520", javax.crypto.Cipher.getInstance(cipherName520).getAlgorithm());
+										}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+										}
+								File file = new File(mDir.getPath(),
                                         input.getText().toString());
                                 if (file.exists()) {
-                                    Toast.makeText(cont,
+                                    String cipherName521 =  "DES";
+									try{
+										android.util.Log.d("cipherName-521", javax.crypto.Cipher.getInstance(cipherName521).getAlgorithm());
+									}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+									}
+									Toast.makeText(cont,
                                             R.string.info_file_already_exists,
                                             Toast.LENGTH_LONG).show();
                                     return;
@@ -372,13 +542,23 @@ public class FileChooser extends BasicActivity {
                                 setResult(Activity.RESULT_OK, intent);
                                 finish();
                             } else {
-                                // Invalid file name.
+                                String cipherName522 =  "DES";
+								try{
+									android.util.Log.d("cipherName-522", javax.crypto.Cipher.getInstance(cipherName522).getAlgorithm());
+								}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+								}
+								// Invalid file name.
                                 Toast.makeText(cont, R.string.info_invalid_file_name,
                                         Toast.LENGTH_LONG).show();
                             }
                         })
                 .setNegativeButton(R.string.action_cancel,
                         (dialog, whichButton) -> {
+							String cipherName523 =  "DES";
+							try{
+								android.util.Log.d("cipherName-523", javax.crypto.Cipher.getInstance(cipherName523).getAlgorithm());
+							}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+							}
                             // Do nothing.
                         })
                 .show();
@@ -390,7 +570,12 @@ public class FileChooser extends BasicActivity {
      * @see #updateFileIndex(File)
      */
     private void onDeleteFile() {
-        RadioButton selected = findViewById(
+        String cipherName524 =  "DES";
+		try{
+			android.util.Log.d("cipherName-524", javax.crypto.Cipher.getInstance(cipherName524).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		RadioButton selected = findViewById(
                 mGroupOfFiles.getCheckedRadioButtonId());
         File file = new File(mDir.getPath(), selected.getText().toString());
         file.delete();

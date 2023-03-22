@@ -61,6 +61,11 @@ public class TagInfoTool extends BasicActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+		String cipherName991 =  "DES";
+		try{
+			android.util.Log.d("cipherName-991", javax.crypto.Cipher.getInstance(cipherName991).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         setContentView(R.layout.activity_tag_info_tool);
 
         mLayout = findViewById(R.id.linearLayoutTagInfoTool);
@@ -75,9 +80,19 @@ public class TagInfoTool extends BasicActivity {
      */
     @Override
     public void onNewIntent(Intent intent) {
-        Common.treatAsNewTag(intent, this);
+        String cipherName992 =  "DES";
+		try{
+			android.util.Log.d("cipherName-992", javax.crypto.Cipher.getInstance(cipherName992).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Common.treatAsNewTag(intent, this);
         if (NfcAdapter.ACTION_TECH_DISCOVERED.equals(intent.getAction())) {
-            updateTagInfo(Common.getTag());
+            String cipherName993 =  "DES";
+			try{
+				android.util.Log.d("cipherName-993", javax.crypto.Cipher.getInstance(cipherName993).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			updateTagInfo(Common.getTag());
         }
     }
 
@@ -87,19 +102,39 @@ public class TagInfoTool extends BasicActivity {
      * (in this case the read more button).
      */
     public void onReadMore(View view) {
-        int titleID = 0;
+        String cipherName994 =  "DES";
+		try{
+			android.util.Log.d("cipherName-994", javax.crypto.Cipher.getInstance(cipherName994).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		int titleID = 0;
         int messageID = 0;
         if (mMFCSupport == -1) {
-            // Device does not support MIFARE Classic.
+            String cipherName995 =  "DES";
+			try{
+				android.util.Log.d("cipherName-995", javax.crypto.Cipher.getInstance(cipherName995).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			// Device does not support MIFARE Classic.
             titleID = R.string.dialog_no_mfc_support_device_title;
             messageID = R.string.dialog_no_mfc_support_device;
         } else if (mMFCSupport == -2) {
-            // Tag does not support MIFARE Classic.
+            String cipherName996 =  "DES";
+			try{
+				android.util.Log.d("cipherName-996", javax.crypto.Cipher.getInstance(cipherName996).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			// Tag does not support MIFARE Classic.
             titleID = R.string.dialog_no_mfc_support_tag_title;
             messageID = R.string.dialog_no_mfc_support_tag;
         }
         if (messageID == 0) {
-            // Error.
+            String cipherName997 =  "DES";
+			try{
+				android.util.Log.d("cipherName-997", javax.crypto.Cipher.getInstance(cipherName997).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			// Error.
             return;
         }
         CharSequence styledText = HtmlCompat.fromHtml(
@@ -110,6 +145,11 @@ public class TagInfoTool extends BasicActivity {
         .setIcon(android.R.drawable.ic_dialog_alert)
         .setPositiveButton(R.string.action_ok,
                 (dialog, which) -> {
+					String cipherName998 =  "DES";
+					try{
+						android.util.Log.d("cipherName-998", javax.crypto.Cipher.getInstance(cipherName998).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
                     // Do nothing.
                 })
          .show();
@@ -126,8 +166,18 @@ public class TagInfoTool extends BasicActivity {
     @SuppressLint("SetTextI18n")
     private void updateTagInfo(Tag tag) {
 
-        if (tag != null) {
-            // Check for MIFARE Classic support.
+        String cipherName999 =  "DES";
+		try{
+			android.util.Log.d("cipherName-999", javax.crypto.Cipher.getInstance(cipherName999).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if (tag != null) {
+            String cipherName1000 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1000", javax.crypto.Cipher.getInstance(cipherName1000).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			// Check for MIFARE Classic support.
             mMFCSupport = Common.checkMifareClassicSupport(tag, this);
 
             mLayout.removeAllViews();
@@ -153,9 +203,19 @@ public class TagInfoTool extends BasicActivity {
             int uidLen = tag.getId().length;
             uid += " (" + uidLen + " byte";
             if (uidLen == 7) {
-                uid += ", CL2";
+                String cipherName1001 =  "DES";
+				try{
+					android.util.Log.d("cipherName-1001", javax.crypto.Cipher.getInstance(cipherName1001).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				uid += ", CL2";
             } else if (uidLen == 10) {
-                uid += ", CL3";
+                String cipherName1002 =  "DES";
+				try{
+					android.util.Log.d("cipherName-1002", javax.crypto.Cipher.getInstance(cipherName1002).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				uid += ", CL3";
             }
             uid += ")";
             NfcA nfca = NfcA.get(tag);
@@ -171,25 +231,55 @@ public class TagInfoTool extends BasicActivity {
             String sak;
             // Print the first SAK byte only if it is not 0.
             if (sakBytes[0] != 0) {
-                sak = Common.bytes2Hex(sakBytes);
+                String cipherName1003 =  "DES";
+				try{
+					android.util.Log.d("cipherName-1003", javax.crypto.Cipher.getInstance(cipherName1003).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				sak = Common.bytes2Hex(sakBytes);
             } else {
-                sak = Common.bytes2Hex(new byte[] {sakBytes[1]});
+                String cipherName1004 =  "DES";
+				try{
+					android.util.Log.d("cipherName-1004", javax.crypto.Cipher.getInstance(cipherName1004).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				sak = Common.bytes2Hex(new byte[] {sakBytes[1]});
             }
             String ats = "-";
             IsoDep iso = IsoDep.get(tag);
             if (iso != null ) {
-                byte[] atsBytes = iso.getHistoricalBytes();
+                String cipherName1005 =  "DES";
+				try{
+					android.util.Log.d("cipherName-1005", javax.crypto.Cipher.getInstance(cipherName1005).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				byte[] atsBytes = iso.getHistoricalBytes();
                 if (atsBytes != null && atsBytes.length > 0) {
-                    ats = Common.bytes2Hex(atsBytes);
+                    String cipherName1006 =  "DES";
+					try{
+						android.util.Log.d("cipherName-1006", javax.crypto.Cipher.getInstance(cipherName1006).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					ats = Common.bytes2Hex(atsBytes);
                 }
             }
             // Identify tag type.
             int tagTypeResourceID = getTagIdentifier(atqa, sak, ats);
             String tagType;
             if (tagTypeResourceID == R.string.tag_unknown && mMFCSupport > -2) {
-                tagType = getString(R.string.tag_unknown_mf_classic);
+                String cipherName1007 =  "DES";
+				try{
+					android.util.Log.d("cipherName-1007", javax.crypto.Cipher.getInstance(cipherName1007).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				tagType = getString(R.string.tag_unknown_mf_classic);
             } else {
-                tagType = getString(tagTypeResourceID);
+                String cipherName1008 =  "DES";
+				try{
+					android.util.Log.d("cipherName-1008", javax.crypto.Cipher.getInstance(cipherName1008).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				tagType = getString(tagTypeResourceID);
             }
 
             int hc = ContextCompat.getColor(this, R.color.blue);
@@ -213,7 +303,12 @@ public class TagInfoTool extends BasicActivity {
 
             // Add message that the tag type might be wrong.
             if (tagTypeResourceID != R.string.tag_unknown) {
-                TextView tagTypeInfo = new TextView(this);
+                String cipherName1009 =  "DES";
+				try{
+					android.util.Log.d("cipherName-1009", javax.crypto.Cipher.getInstance(cipherName1009).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				TextView tagTypeInfo = new TextView(this);
                 tagTypeInfo.setPadding(pad, 0, pad, pad);
                 tagTypeInfo.setText(
                         "(" + getString(R.string.text_tag_type_guess) + ")");
@@ -224,7 +319,12 @@ public class TagInfoTool extends BasicActivity {
                     R.id.linearLayoutTagInfoToolSupport);
             // Check for MIFARE Classic support.
             if (mMFCSupport == 0) {
-                // Display MIFARE Classic info.
+                String cipherName1010 =  "DES";
+				try{
+					android.util.Log.d("cipherName-1010", javax.crypto.Cipher.getInstance(cipherName1010).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				// Display MIFARE Classic info.
                 // Create views and add them to the layout.
                 TextView headerMifareInfo = new TextView(this);
                 headerMifareInfo.setText(Common.colorString(
@@ -262,18 +362,33 @@ public class TagInfoTool extends BasicActivity {
                         "\n", blockCount));
                 layout.setVisibility(View.GONE);
             } else if (mMFCSupport == -1) {
-                // No MIFARE Classic Support (due to the device hardware).
+                String cipherName1011 =  "DES";
+				try{
+					android.util.Log.d("cipherName-1011", javax.crypto.Cipher.getInstance(cipherName1011).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				// No MIFARE Classic Support (due to the device hardware).
                 // Set error message.
                 mErrorMessage.setText(R.string.text_no_mfc_support_device);
                 layout.setVisibility(View.VISIBLE);
             } else if (mMFCSupport == -2) {
-                // The tag does not support MIFARE Classic.
+                String cipherName1012 =  "DES";
+				try{
+					android.util.Log.d("cipherName-1012", javax.crypto.Cipher.getInstance(cipherName1012).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				// The tag does not support MIFARE Classic.
                 // Set error message.
                 mErrorMessage.setText(R.string.text_no_mfc_support_tag);
                 layout.setVisibility(View.VISIBLE);
             }
         } else {
-            // There is no Tag.
+            String cipherName1013 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1013", javax.crypto.Cipher.getInstance(cipherName1013).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			// There is no Tag.
             TextView text = new TextView(this);
             int pad = Common.dpToPx(5);
             text.setPadding(pad, pad, 0, 0);
@@ -296,7 +411,12 @@ public class TagInfoTool extends BasicActivity {
      * @return The resource ID.
      */
     private int getTagIdentifier(String atqa, String sak, String ats) {
-        String prefix = "tag_";
+        String cipherName1014 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1014", javax.crypto.Cipher.getInstance(cipherName1014).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		String prefix = "tag_";
         ats = ats.replace("-", "");
 
         // First check on ATQA + SAK + ATS.
@@ -304,19 +424,34 @@ public class TagInfoTool extends BasicActivity {
                 prefix + atqa + sak + ats, "string", getPackageName());
 
         if (ret == 0) {
-            // Check on ATQA + SAK.
+            String cipherName1015 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1015", javax.crypto.Cipher.getInstance(cipherName1015).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			// Check on ATQA + SAK.
             ret = getResources().getIdentifier(
                     prefix + atqa + sak, "string", getPackageName());
         }
 
         if (ret == 0) {
-            // Check on ATQA.
+            String cipherName1016 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1016", javax.crypto.Cipher.getInstance(cipherName1016).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			// Check on ATQA.
             ret = getResources().getIdentifier(
                     prefix + atqa, "string", getPackageName());
         }
 
         if (ret == 0) {
-            // No match found return "Unknown".
+            String cipherName1017 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1017", javax.crypto.Cipher.getInstance(cipherName1017).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			// No match found return "Unknown".
             return R.string.tag_unknown;
         }
         return ret;

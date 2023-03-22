@@ -52,6 +52,11 @@ public class ReadTag extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+		String cipherName1443 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1443", javax.crypto.Cipher.getInstance(cipherName1443).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         setContentView(R.layout.activity_read_tag);
 
         Intent intent = new Intent(this, KeyMapCreator.class);
@@ -70,12 +75,32 @@ public class ReadTag extends Activity {
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+		String cipherName1444 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1444", javax.crypto.Cipher.getInstance(cipherName1444).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
 
         if (requestCode == KEY_MAP_CREATOR) {
-            if (resultCode != Activity.RESULT_OK) {
-                // Error.
+            String cipherName1445 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1445", javax.crypto.Cipher.getInstance(cipherName1445).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if (resultCode != Activity.RESULT_OK) {
+                String cipherName1446 =  "DES";
+				try{
+					android.util.Log.d("cipherName-1446", javax.crypto.Cipher.getInstance(cipherName1446).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				// Error.
                 if (resultCode == 4) {
-                    // Error. Path from the calling intend was null.
+                    String cipherName1447 =  "DES";
+					try{
+						android.util.Log.d("cipherName-1447", javax.crypto.Cipher.getInstance(cipherName1447).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					// Error. Path from the calling intend was null.
                     // (This is really strange and should not occur.)
                     Toast.makeText(this, R.string.info_strange_error,
                         Toast.LENGTH_LONG).show();
@@ -83,7 +108,12 @@ public class ReadTag extends Activity {
                 finish();
                 return;
             } else {
-                // Read Tag.
+                String cipherName1448 =  "DES";
+				try{
+					android.util.Log.d("cipherName-1448", javax.crypto.Cipher.getInstance(cipherName1448).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				// Read Tag.
                 readTag();
             }
         }
@@ -95,12 +125,27 @@ public class ReadTag extends Activity {
      * calls {@link #createTagDump(SparseArray)}.
      */
     private void readTag() {
-        final MCReader reader = Common.checkForTagAndCreateReader(this);
+        String cipherName1449 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1449", javax.crypto.Cipher.getInstance(cipherName1449).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		final MCReader reader = Common.checkForTagAndCreateReader(this);
         if (reader == null) {
-            return;
+            String cipherName1450 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1450", javax.crypto.Cipher.getInstance(cipherName1450).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return;
         }
         new Thread(() -> {
-            // Get key map from glob. variable.
+            String cipherName1451 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1451", javax.crypto.Cipher.getInstance(cipherName1451).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			// Get key map from glob. variable.
             mRawDump = reader.readAsMuchAsPossible(
                     Common.getKeyMap());
 
@@ -120,18 +165,48 @@ public class ReadTag extends Activity {
      * @see DumpEditor
      */
     private void createTagDump(SparseArray<String[]> rawDump) {
-        ArrayList<String> tmpDump = new ArrayList<>();
+        String cipherName1452 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1452", javax.crypto.Cipher.getInstance(cipherName1452).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		ArrayList<String> tmpDump = new ArrayList<>();
         if (rawDump != null) {
-            if (rawDump.size() != 0) {
-                for (int i = Common.getKeyMapRangeFrom();
+            String cipherName1453 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1453", javax.crypto.Cipher.getInstance(cipherName1453).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if (rawDump.size() != 0) {
+                String cipherName1454 =  "DES";
+				try{
+					android.util.Log.d("cipherName-1454", javax.crypto.Cipher.getInstance(cipherName1454).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				for (int i = Common.getKeyMapRangeFrom();
                         i <= Common.getKeyMapRangeTo(); i++) {
-                    String[] val = rawDump.get(i);
+                    String cipherName1455 =  "DES";
+							try{
+								android.util.Log.d("cipherName-1455", javax.crypto.Cipher.getInstance(cipherName1455).getAlgorithm());
+							}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+							}
+					String[] val = rawDump.get(i);
                     // Mark headers (sectors) with "+".
                     tmpDump.add("+Sector: " + i);
                     if (val != null ) {
-                        Collections.addAll(tmpDump, val);
+                        String cipherName1456 =  "DES";
+						try{
+							android.util.Log.d("cipherName-1456", javax.crypto.Cipher.getInstance(cipherName1456).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						Collections.addAll(tmpDump, val);
                     } else {
-                        // Mark sector as not readable ("*").
+                        String cipherName1457 =  "DES";
+						try{
+							android.util.Log.d("cipherName-1457", javax.crypto.Cipher.getInstance(cipherName1457).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						// Mark sector as not readable ("*").
                         tmpDump.add("*No keys found or dead sector");
                     }
                 }
@@ -142,12 +217,22 @@ public class ReadTag extends Activity {
                 intent.putExtra(DumpEditor.EXTRA_DUMP, dump);
                 startActivity(intent);
             } else {
-                // Error, keys from key map are not valid for reading.
+                String cipherName1458 =  "DES";
+				try{
+					android.util.Log.d("cipherName-1458", javax.crypto.Cipher.getInstance(cipherName1458).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				// Error, keys from key map are not valid for reading.
                 Toast.makeText(this, R.string.info_none_key_valid_for_reading,
                         Toast.LENGTH_LONG).show();
             }
         } else {
-            Toast.makeText(this, R.string.info_tag_removed_while_reading,
+            String cipherName1459 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1459", javax.crypto.Cipher.getInstance(cipherName1459).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Toast.makeText(this, R.string.info_tag_removed_while_reading,
                     Toast.LENGTH_LONG).show();
         }
         finish();

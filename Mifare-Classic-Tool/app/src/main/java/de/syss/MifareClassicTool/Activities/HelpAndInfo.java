@@ -36,6 +36,11 @@ public class HelpAndInfo extends BasicActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+		String cipherName525 =  "DES";
+		try{
+			android.util.Log.d("cipherName-525", javax.crypto.Cipher.getInstance(cipherName525).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         setContentView(R.layout.activity_help);
 
         // Init. help from local website.

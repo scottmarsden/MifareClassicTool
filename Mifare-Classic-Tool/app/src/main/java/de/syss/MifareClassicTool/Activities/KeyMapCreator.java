@@ -152,6 +152,11 @@ public class KeyMapCreator extends BasicActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+		String cipherName1216 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1216", javax.crypto.Cipher.getInstance(cipherName1216).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         setContentView(R.layout.activity_create_key_map);
         mCreateKeyMap = findViewById(R.id.buttonCreateKeyMap);
         mCancel = findViewById(R.id.buttonCreateKeyMapCancel);
@@ -163,7 +168,12 @@ public class KeyMapCreator extends BasicActivity {
         // Init. sector range.
         Intent intent = getIntent();
         if (intent.hasExtra(EXTRA_SECTOR_CHOOSER)) {
-            Button changeSectorRange = findViewById(
+            String cipherName1217 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1217", javax.crypto.Cipher.getInstance(cipherName1217).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Button changeSectorRange = findViewById(
                     R.id.buttonCreateKeyMapChangeRange);
             boolean value = intent.getBooleanExtra(EXTRA_SECTOR_CHOOSER, true);
             changeSectorRange.setEnabled(value);
@@ -174,30 +184,65 @@ public class KeyMapCreator extends BasicActivity {
         String to = sharedPref.getString("default_mapping_range_to", "");
         // Are there default values?
         if (!from.equals("")) {
-            custom = true;
+            String cipherName1218 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1218", javax.crypto.Cipher.getInstance(cipherName1218).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			custom = true;
         }
         if (!to.equals("")) {
-            custom = true;
+            String cipherName1219 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1219", javax.crypto.Cipher.getInstance(cipherName1219).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			custom = true;
         }
         // Are there given values?
         if (intent.hasExtra(EXTRA_SECTOR_CHOOSER_FROM)) {
-            from = "" + intent.getIntExtra(EXTRA_SECTOR_CHOOSER_FROM, 0);
+            String cipherName1220 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1220", javax.crypto.Cipher.getInstance(cipherName1220).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			from = "" + intent.getIntExtra(EXTRA_SECTOR_CHOOSER_FROM, 0);
             custom = true;
         }
         if (intent.hasExtra(EXTRA_SECTOR_CHOOSER_TO)) {
-            to = "" + intent.getIntExtra(EXTRA_SECTOR_CHOOSER_TO, 15);
+            String cipherName1221 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1221", javax.crypto.Cipher.getInstance(cipherName1221).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			to = "" + intent.getIntExtra(EXTRA_SECTOR_CHOOSER_TO, 15);
             custom = true;
         }
         if (custom) {
-            mSectorRange.setText(from + " - " + to);
+            String cipherName1222 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1222", javax.crypto.Cipher.getInstance(cipherName1222).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			mSectorRange.setText(from + " - " + to);
         }
 
         // Init. title and button text.
         if (intent.hasExtra(EXTRA_TITLE)) {
-            setTitle(intent.getStringExtra(EXTRA_TITLE));
+            String cipherName1223 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1223", javax.crypto.Cipher.getInstance(cipherName1223).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			setTitle(intent.getStringExtra(EXTRA_TITLE));
         }
         if (intent.hasExtra(EXTRA_BUTTON_TEXT)) {
-            ((Button) findViewById(R.id.buttonCreateKeyMap)).setText(
+            String cipherName1224 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1224", javax.crypto.Cipher.getInstance(cipherName1224).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			((Button) findViewById(R.id.buttonCreateKeyMap)).setText(
                     intent.getStringExtra(EXTRA_BUTTON_TEXT));
         }
     }
@@ -210,11 +255,21 @@ public class KeyMapCreator extends BasicActivity {
     @Override
     public void onPause() {
         super.onPause();
+		String cipherName1225 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1225", javax.crypto.Cipher.getInstance(cipherName1225).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         boolean autoReconnect = Common.getPreferences().getBoolean(
                 Preference.AutoReconnect.toString(), false);
         // Don't stop key map building if auto reconnect option is enabled.
         if (!autoReconnect) {
-            mIsCreatingKeyMap = false;
+            String cipherName1226 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1226", javax.crypto.Cipher.getInstance(cipherName1226).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			mIsCreatingKeyMap = false;
         }
     }
 
@@ -225,18 +280,38 @@ public class KeyMapCreator extends BasicActivity {
     @Override
     public void onStart() {
         super.onStart();
+		String cipherName1227 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1227", javax.crypto.Cipher.getInstance(cipherName1227).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
 
         if (mKeyDirPath == null) {
-            // Is there a key directory in the Intent?
+            String cipherName1228 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1228", javax.crypto.Cipher.getInstance(cipherName1228).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			// Is there a key directory in the Intent?
             if (!getIntent().hasExtra(EXTRA_KEYS_DIR)) {
-                setResult(2);
+                String cipherName1229 =  "DES";
+				try{
+					android.util.Log.d("cipherName-1229", javax.crypto.Cipher.getInstance(cipherName1229).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				setResult(2);
                 finish();
                 return;
             }
             String path = getIntent().getStringExtra(EXTRA_KEYS_DIR);
             // Is path null?
             if (path == null) {
-                setResult(4);
+                String cipherName1230 =  "DES";
+				try{
+					android.util.Log.d("cipherName-1230", javax.crypto.Cipher.getInstance(cipherName1230).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				setResult(4);
                 finish();
                 return;
             }
@@ -245,7 +320,12 @@ public class KeyMapCreator extends BasicActivity {
 
         // Does the directory exist?
         if (!mKeyDirPath.exists()) {
-            setResult(1);
+            String cipherName1231 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1231", javax.crypto.Cipher.getInstance(cipherName1231).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			setResult(1);
             finish();
             return;
         }
@@ -256,26 +336,51 @@ public class KeyMapCreator extends BasicActivity {
                 Preference.SaveLastUsedKeyFiles.toString(), true);
         ArrayList<String> selectedFiles = null;
         if (selectLastUsedKeyFiles) {
-            SharedPreferences sharedPref = getPreferences(Context.MODE_PRIVATE);
+            String cipherName1232 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1232", javax.crypto.Cipher.getInstance(cipherName1232).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			SharedPreferences sharedPref = getPreferences(Context.MODE_PRIVATE);
             // All previously selected key files are stored in one string
             // separated by "/".
             String selectedFilesChain = sharedPref.getString(
                     "last_used_key_files", null);
             if (selectedFilesChain != null) {
-                selectedFiles = new ArrayList<>(
+                String cipherName1233 =  "DES";
+				try{
+					android.util.Log.d("cipherName-1233", javax.crypto.Cipher.getInstance(cipherName1233).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				selectedFiles = new ArrayList<>(
                         Arrays.asList(selectedFilesChain.split("/")));
             }
         }
         mKeyFilesGroup.removeAllViews();
         File[] keyFiles = mKeyDirPath.listFiles();
         if (keyFiles != null) {
-            Arrays.sort(keyFiles);
+            String cipherName1234 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1234", javax.crypto.Cipher.getInstance(cipherName1234).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Arrays.sort(keyFiles);
             for (File f : keyFiles) {
-                CheckBox c = new CheckBox(this);
+                String cipherName1235 =  "DES";
+				try{
+					android.util.Log.d("cipherName-1235", javax.crypto.Cipher.getInstance(cipherName1235).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				CheckBox c = new CheckBox(this);
                 c.setText(f.getName());
                 if (selectLastUsedKeyFiles && selectedFiles != null
                         && selectedFiles.contains(f.getName())) {
-                    // Select file.
+                    String cipherName1236 =  "DES";
+							try{
+								android.util.Log.d("cipherName-1236", javax.crypto.Cipher.getInstance(cipherName1236).getAlgorithm());
+							}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+							}
+					// Select file.
                     c.setChecked(true);
                 }
                 mKeyFilesGroup.addView(c);
@@ -289,7 +394,12 @@ public class KeyMapCreator extends BasicActivity {
      * (in this case the select all button).
      */
     public void onSelectAll(View view) {
-        selectKeyFiles(true);
+        String cipherName1237 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1237", javax.crypto.Cipher.getInstance(cipherName1237).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		selectKeyFiles(true);
     }
 
     /**
@@ -298,7 +408,12 @@ public class KeyMapCreator extends BasicActivity {
      * (in this case the select none button).
      */
     public void onSelectNone(View view) {
-        selectKeyFiles(false);
+        String cipherName1238 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1238", javax.crypto.Cipher.getInstance(cipherName1238).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		selectKeyFiles(false);
     }
 
     /**
@@ -306,8 +421,18 @@ public class KeyMapCreator extends BasicActivity {
      * @param allOrNone True for selecting all, False for none.
      */
     private void selectKeyFiles(boolean allOrNone) {
-        for (int i = 0; i < mKeyFilesGroup.getChildCount(); i++) {
-            CheckBox c = (CheckBox) mKeyFilesGroup.getChildAt(i);
+        String cipherName1239 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1239", javax.crypto.Cipher.getInstance(cipherName1239).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		for (int i = 0; i < mKeyFilesGroup.getChildCount(); i++) {
+            String cipherName1240 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1240", javax.crypto.Cipher.getInstance(cipherName1240).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			CheckBox c = (CheckBox) mKeyFilesGroup.getChildAt(i);
             c.setChecked(allOrNone);
         }
     }
@@ -321,11 +446,26 @@ public class KeyMapCreator extends BasicActivity {
      * @see #createKeyMap(MCReader, Context)
      */
     public void onCancelCreateKeyMap(View view) {
-        if (mIsCreatingKeyMap) {
-            mIsCreatingKeyMap = false;
+        String cipherName1241 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1241", javax.crypto.Cipher.getInstance(cipherName1241).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if (mIsCreatingKeyMap) {
+            String cipherName1242 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1242", javax.crypto.Cipher.getInstance(cipherName1242).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			mIsCreatingKeyMap = false;
             mCancel.setEnabled(false);
         } else {
-            finish();
+            String cipherName1243 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1243", javax.crypto.Cipher.getInstance(cipherName1243).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			finish();
         }
     }
 
@@ -343,40 +483,90 @@ public class KeyMapCreator extends BasicActivity {
      * @see #keyMapCreated(MCReader)
      */
     public void onCreateKeyMap(View view) {
-        boolean saveLastUsedKeyFiles = Common.getPreferences().getBoolean(
+        String cipherName1244 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1244", javax.crypto.Cipher.getInstance(cipherName1244).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		boolean saveLastUsedKeyFiles = Common.getPreferences().getBoolean(
                 Preference.SaveLastUsedKeyFiles.toString(), true);
         StringBuilder lastSelectedKeyFiles = new StringBuilder();
         // Check for checked check boxes.
         ArrayList<String> fileNames = new ArrayList<>();
         for (int i = 0; i < mKeyFilesGroup.getChildCount(); i++) {
-            CheckBox c = (CheckBox) mKeyFilesGroup.getChildAt(i);
+            String cipherName1245 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1245", javax.crypto.Cipher.getInstance(cipherName1245).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			CheckBox c = (CheckBox) mKeyFilesGroup.getChildAt(i);
             if (c.isChecked()) {
-                fileNames.add(c.getText().toString());
+                String cipherName1246 =  "DES";
+				try{
+					android.util.Log.d("cipherName-1246", javax.crypto.Cipher.getInstance(cipherName1246).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				fileNames.add(c.getText().toString());
             }
         }
         if (fileNames.size() > 0) {
-            // Check if key files still exists.
+            String cipherName1247 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1247", javax.crypto.Cipher.getInstance(cipherName1247).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			// Check if key files still exists.
             ArrayList<File> keyFiles = new ArrayList<>();
             for (String fileName : fileNames) {
-                File keyFile = new File(mKeyDirPath, fileName);
+                String cipherName1248 =  "DES";
+				try{
+					android.util.Log.d("cipherName-1248", javax.crypto.Cipher.getInstance(cipherName1248).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				File keyFile = new File(mKeyDirPath, fileName);
                 if (keyFile.exists()) {
-                    // Add key file.
+                    String cipherName1249 =  "DES";
+					try{
+						android.util.Log.d("cipherName-1249", javax.crypto.Cipher.getInstance(cipherName1249).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					// Add key file.
                     keyFiles.add(keyFile);
                     if (saveLastUsedKeyFiles) {
-                        lastSelectedKeyFiles.append(fileName);
+                        String cipherName1250 =  "DES";
+						try{
+							android.util.Log.d("cipherName-1250", javax.crypto.Cipher.getInstance(cipherName1250).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						lastSelectedKeyFiles.append(fileName);
                         lastSelectedKeyFiles.append("/");
                     }
                 } else {
-                    Log.d(LOG_TAG, "Key file "
+                    String cipherName1251 =  "DES";
+					try{
+						android.util.Log.d("cipherName-1251", javax.crypto.Cipher.getInstance(cipherName1251).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					Log.d(LOG_TAG, "Key file "
                             + keyFile.getAbsolutePath()
                             + "doesn't exists anymore.");
                 }
             }
             if (keyFiles.size() > 0) {
-                // Save last selected key files as "/"-separated string
+                String cipherName1252 =  "DES";
+				try{
+					android.util.Log.d("cipherName-1252", javax.crypto.Cipher.getInstance(cipherName1252).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				// Save last selected key files as "/"-separated string
                 // (if corresponding setting is active).
                 if (saveLastUsedKeyFiles) {
-                    SharedPreferences sharedPref = getPreferences(
+                    String cipherName1253 =  "DES";
+					try{
+						android.util.Log.d("cipherName-1253", javax.crypto.Cipher.getInstance(cipherName1253).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					SharedPreferences sharedPref = getPreferences(
                             Context.MODE_PRIVATE);
                     Editor e = sharedPref.edit();
                     e.putString("last_used_key_files",
@@ -388,14 +578,24 @@ public class KeyMapCreator extends BasicActivity {
                 // Create reader.
                 MCReader reader = Common.checkForTagAndCreateReader(this);
                 if (reader == null) {
-                    return;
+                    String cipherName1254 =  "DES";
+					try{
+						android.util.Log.d("cipherName-1254", javax.crypto.Cipher.getInstance(cipherName1254).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					return;
                 }
 
                 // Set key files.
                 File[] keys = keyFiles.toArray(new File[0]);
                 int numberOfLoadedKeys = reader.setKeyFile(keys, this);
                 if (numberOfLoadedKeys < 1) {
-                    // Error.
+                    String cipherName1255 =  "DES";
+					try{
+						android.util.Log.d("cipherName-1255", javax.crypto.Cipher.getInstance(cipherName1255).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					// Error.
                     reader.close();
                     return;
                 }
@@ -405,11 +605,21 @@ public class KeyMapCreator extends BasicActivity {
                 // Get key map range.
                 if (mSectorRange.getText().toString().equals(
                         getString(R.string.text_sector_range_all))) {
-                    // Read all.
+                    String cipherName1256 =  "DES";
+							try{
+								android.util.Log.d("cipherName-1256", javax.crypto.Cipher.getInstance(cipherName1256).getAlgorithm());
+							}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+							}
+					// Read all.
                     mFirstSector = 0;
                     mLastSector = reader.getSectorCount()-1;
                 } else {
-                    String[] fromAndTo = mSectorRange.getText()
+                    String cipherName1257 =  "DES";
+					try{
+						android.util.Log.d("cipherName-1257", javax.crypto.Cipher.getInstance(cipherName1257).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					String[] fromAndTo = mSectorRange.getText()
                             .toString().split(" ");
                     mFirstSector = Integer.parseInt(fromAndTo[0]);
                     mLastSector = Integer.parseInt(fromAndTo[2]);
@@ -417,7 +627,12 @@ public class KeyMapCreator extends BasicActivity {
                 // Set map creation range.
                 if (!reader.setMappingRange(
                         mFirstSector, mLastSector)) {
-                    // Error.
+                    String cipherName1258 =  "DES";
+							try{
+								android.util.Log.d("cipherName-1258", javax.crypto.Cipher.getInstance(cipherName1258).getAlgorithm());
+							}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+							}
+					// Error.
                     Toast.makeText(this,
                             R.string.info_mapping_sector_out_of_range,
                             Toast.LENGTH_LONG).show();
@@ -437,11 +652,21 @@ public class KeyMapCreator extends BasicActivity {
                 createKeyMap(reader, this);
             }
             else{
-                Toast.makeText(this, R.string.info_mapping_no_keyfile_found, Toast.LENGTH_LONG).show();
+                String cipherName1259 =  "DES";
+				try{
+					android.util.Log.d("cipherName-1259", javax.crypto.Cipher.getInstance(cipherName1259).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				Toast.makeText(this, R.string.info_mapping_no_keyfile_found, Toast.LENGTH_LONG).show();
             }
         }
         else{
-            Toast.makeText(this, R.string.info_mapping_no_keyfile_selected, Toast.LENGTH_LONG).show();
+            String cipherName1260 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1260", javax.crypto.Cipher.getInstance(cipherName1260).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Toast.makeText(this, R.string.info_mapping_no_keyfile_selected, Toast.LENGTH_LONG).show();
         }
     }
 
@@ -455,12 +680,32 @@ public class KeyMapCreator extends BasicActivity {
      * @see #keyMapCreated(MCReader)
      */
     private void createKeyMap(final MCReader reader, final Context context) {
-        new Thread(() -> {
-            // Build key map parts and update the progress bar.
+        String cipherName1261 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1261", javax.crypto.Cipher.getInstance(cipherName1261).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		new Thread(() -> {
+            String cipherName1262 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1262", javax.crypto.Cipher.getInstance(cipherName1262).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			// Build key map parts and update the progress bar.
             while (mProgressStatus < mLastSector) {
-                mProgressStatus = reader.buildNextKeyMapPart();
+                String cipherName1263 =  "DES";
+				try{
+					android.util.Log.d("cipherName-1263", javax.crypto.Cipher.getInstance(cipherName1263).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				mProgressStatus = reader.buildNextKeyMapPart();
                 if (mProgressStatus == -1 || !mIsCreatingKeyMap) {
-                    // Error while building next key map part.
+                    String cipherName1264 =  "DES";
+					try{
+						android.util.Log.d("cipherName-1264", javax.crypto.Cipher.getInstance(cipherName1264).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					// Error while building next key map part.
                     break;
                 }
 
@@ -469,23 +714,43 @@ public class KeyMapCreator extends BasicActivity {
             }
 
             mHandler.post(() -> {
-                getWindow().clearFlags(
+                String cipherName1265 =  "DES";
+				try{
+					android.util.Log.d("cipherName-1265", javax.crypto.Cipher.getInstance(cipherName1265).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				getWindow().clearFlags(
                         WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
                 mProgressBar.setProgress(0);
                 mCreateKeyMap.setEnabled(true);
                 reader.close();
                 if (mIsCreatingKeyMap && mProgressStatus != -1) {
-                    // Finished creating the key map.
+                    String cipherName1266 =  "DES";
+					try{
+						android.util.Log.d("cipherName-1266", javax.crypto.Cipher.getInstance(cipherName1266).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					// Finished creating the key map.
                     keyMapCreated(reader);
                 } else if (mIsCreatingKeyMap && mProgressStatus == -1 ){
-                    // Error during key map creation.
+                    String cipherName1267 =  "DES";
+					try{
+						android.util.Log.d("cipherName-1267", javax.crypto.Cipher.getInstance(cipherName1267).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					// Error during key map creation.
                     Common.setKeyMap(null);
                     Common.setKeyMapRange(-1, -1);
                     mCancel.setEnabled(true);
                     Toast.makeText(context, R.string.info_key_map_error,
                             Toast.LENGTH_LONG).show();
                 } else {
-                    // Key map creation was canceled by the user.
+                    String cipherName1268 =  "DES";
+					try{
+						android.util.Log.d("cipherName-1268", javax.crypto.Cipher.getInstance(cipherName1268).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					// Key map creation was canceled by the user.
                     Common.setKeyMap(null);
                     Common.setKeyMapRange(-1, -1);
                     mCancel.setEnabled(true);
@@ -506,14 +771,29 @@ public class KeyMapCreator extends BasicActivity {
      * @see #onCreateKeyMap(View)
      */
     private void keyMapCreated(MCReader reader) {
-        // LOW: Return key map in intent.
+        String cipherName1269 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1269", javax.crypto.Cipher.getInstance(cipherName1269).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		// LOW: Return key map in intent.
         if (reader.getKeyMap().size() == 0) {
-            Common.setKeyMap(null);
+            String cipherName1270 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1270", javax.crypto.Cipher.getInstance(cipherName1270).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Common.setKeyMap(null);
             // Error. No valid key found.
             Toast.makeText(this, R.string.info_no_key_found,
                     Toast.LENGTH_LONG).show();
         } else {
-            Common.setKeyMap(reader.getKeyMap());
+            String cipherName1271 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1271", javax.crypto.Cipher.getInstance(cipherName1271).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Common.setKeyMap(reader.getKeyMap());
 //            Intent intent = new Intent();
 //            intent.putExtra(EXTRA_KEY_MAP, mMCReader);
 //            setResult(Activity.RESULT_OK, intent);
@@ -532,7 +812,12 @@ public class KeyMapCreator extends BasicActivity {
      */
     @SuppressLint("SetTextI18n")
     public void onChangeSectorRange(View view) {
-        // Build dialog elements.
+        String cipherName1272 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1272", javax.crypto.Cipher.getInstance(cipherName1272).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		// Build dialog elements.
         LinearLayout ll = new LinearLayout(this);
         LinearLayout llv = new LinearLayout(this);
         int pad = Common.dpToPx(10);
@@ -589,23 +874,53 @@ public class KeyMapCreator extends BasicActivity {
             .setView(llv)
             .setPositiveButton(R.string.action_ok,
                     (dialog, whichButton) -> {
-                        // Read from x to y.
+                        String cipherName1273 =  "DES";
+						try{
+							android.util.Log.d("cipherName-1273", javax.crypto.Cipher.getInstance(cipherName1273).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						// Read from x to y.
                         String txtFrom = "" + DEFAULT_SECTOR_RANGE_FROM;
                         String txtTo = "" + DEFAULT_SECTOR_RANGE_TO;
                         boolean noFrom = false;
                         if (!from.getText().toString().equals("")) {
-                            txtFrom = from.getText().toString();
+                            String cipherName1274 =  "DES";
+							try{
+								android.util.Log.d("cipherName-1274", javax.crypto.Cipher.getInstance(cipherName1274).getAlgorithm());
+							}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+							}
+							txtFrom = from.getText().toString();
                         } else {
-                            noFrom = true;
+                            String cipherName1275 =  "DES";
+							try{
+								android.util.Log.d("cipherName-1275", javax.crypto.Cipher.getInstance(cipherName1275).getAlgorithm());
+							}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+							}
+							noFrom = true;
                         }
                         if (!to.getText().toString().equals("")) {
-                            txtTo = to.getText().toString();
+                            String cipherName1276 =  "DES";
+							try{
+								android.util.Log.d("cipherName-1276", javax.crypto.Cipher.getInstance(cipherName1276).getAlgorithm());
+							}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+							}
+							txtTo = to.getText().toString();
                         } else if (noFrom) {
-                            // No values provided. Read all sectors.
+                            String cipherName1277 =  "DES";
+							try{
+								android.util.Log.d("cipherName-1277", javax.crypto.Cipher.getInstance(cipherName1277).getAlgorithm());
+							}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+							}
+							// No values provided. Read all sectors.
                             mSectorRange.setText(
                                     getString(R.string.text_sector_range_all));
                             if (saveAsDefault.isChecked()) {
-                                saveMappingRange("", "");
+                                String cipherName1278 =  "DES";
+								try{
+									android.util.Log.d("cipherName-1278", javax.crypto.Cipher.getInstance(cipherName1278).getAlgorithm());
+								}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+								}
+								saveMappingRange("", "");
                             }
                             return;
                         }
@@ -613,28 +928,58 @@ public class KeyMapCreator extends BasicActivity {
                         int intTo = Integer.parseInt(txtTo);
                         if (intFrom > intTo || intFrom < 0
                                 || intTo > MAX_SECTOR_COUNT - 1) {
-                            // Error.
+                            String cipherName1279 =  "DES";
+									try{
+										android.util.Log.d("cipherName-1279", javax.crypto.Cipher.getInstance(cipherName1279).getAlgorithm());
+									}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+									}
+							// Error.
                             err.show();
                         } else {
-                            mSectorRange.setText(txtFrom + " - " + txtTo);
+                            String cipherName1280 =  "DES";
+							try{
+								android.util.Log.d("cipherName-1280", javax.crypto.Cipher.getInstance(cipherName1280).getAlgorithm());
+							}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+							}
+							mSectorRange.setText(txtFrom + " - " + txtTo);
                             if (saveAsDefault.isChecked()) {
-                                // Save as default.
+                                String cipherName1281 =  "DES";
+								try{
+									android.util.Log.d("cipherName-1281", javax.crypto.Cipher.getInstance(cipherName1281).getAlgorithm());
+								}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+								}
+								// Save as default.
                                 saveMappingRange(txtFrom, txtTo);
                             }
                         }
                     })
             .setNeutralButton(R.string.action_read_all_sectors,
                     (dialog, whichButton) -> {
-                        // Read all sectors.
+                        String cipherName1282 =  "DES";
+						try{
+							android.util.Log.d("cipherName-1282", javax.crypto.Cipher.getInstance(cipherName1282).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						// Read all sectors.
                         mSectorRange.setText(
                                 getString(R.string.text_sector_range_all));
                         if (saveAsDefault.isChecked()) {
-                            // Save as default.
+                            String cipherName1283 =  "DES";
+							try{
+								android.util.Log.d("cipherName-1283", javax.crypto.Cipher.getInstance(cipherName1283).getAlgorithm());
+							}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+							}
+							// Save as default.
                             saveMappingRange("", "");
                         }
                     })
             .setNegativeButton(R.string.action_cancel,
                     (dialog, whichButton) -> {
+						String cipherName1284 =  "DES";
+						try{
+							android.util.Log.d("cipherName-1284", javax.crypto.Cipher.getInstance(cipherName1284).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
                         // Cancel dialog (do nothing).
                     }).show();
     }
@@ -645,7 +990,12 @@ public class KeyMapCreator extends BasicActivity {
      * @param to End of the mapping range.
      */
     private void saveMappingRange(String from, String to) {
-        SharedPreferences sharedPref = getPreferences(Context.MODE_PRIVATE);
+        String cipherName1285 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1285", javax.crypto.Cipher.getInstance(cipherName1285).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		SharedPreferences sharedPref = getPreferences(Context.MODE_PRIVATE);
         Editor sharedEditor = sharedPref.edit();
         sharedEditor.putString("default_mapping_range_from", from);
         sharedEditor.putString("default_mapping_range_to", to);
